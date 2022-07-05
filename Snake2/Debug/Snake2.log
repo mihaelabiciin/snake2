@@ -1,0 +1,4 @@
+﻿  Snake2.cpp
+C:\Users\Mihaela\source\repos\Snake2\Snake2\Snake2.cpp(91,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mihaela\source\repos\Snake2\Snake2\Snake2.cpp(493,16): warning C4102: 'high_scores': unreferenced label
+  Snake2.vcxproj -> C:\Users\Mihaela\source\repos\Snake2\Debug\Snake2.exe
