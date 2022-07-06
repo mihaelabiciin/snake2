@@ -267,7 +267,7 @@ void snake::input()
 }
 void snake::logic()
 {
-    int paused_taken = false;;
+    int pause_taken = false;;
     int prevx, prevy;
     prevx = x;
     prevy = y;
@@ -275,19 +275,19 @@ void snake::logic()
     {
     case LEFT:
         x--;
-        paused_taken = false;
+        pause_taken = false;
         break;
     case RIGHT:
         x++;
-        paused_taken = false;
+        pause_taken = false;
         break;
     case UP:
         y--;
-        paused_taken = false;
+        pause_taken = false;
         break;
     case DOWN:
         y++;
-        paused_taken = false;
+        pause_taken = false;
         break;
     case ESC:
         gameOver = true;
@@ -301,7 +301,7 @@ void snake::logic()
             {
                 if (_getch() == 'p' || _getch() == 32) {
                     paused = false;
-                    paused_taken = true;
+                    pause_taken = true;
                 }
                 else goto pause;
             }
@@ -309,7 +309,7 @@ void snake::logic()
         KEY = last_key;
         break;
     }
-    if (!paused_taken)
+    if (!pause_taken)
     {
         for (int i = ntail - 1; i > 0; i--)
         {
@@ -335,7 +335,7 @@ void snake::logic()
     }
     for (int i = 0; i < ntail; i++)
         if (x == xtail[i] && y == ytail[i]) {
-            cout << "\nYou ate yourself\n";
+            if (!gameOver) cout << "\nYou ate yourself\n";
             gameOver = true;
             break;
         }
